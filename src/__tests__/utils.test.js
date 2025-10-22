@@ -1,9 +1,14 @@
+// src/__tests__/utils.test.js
 import { currentAgeForBirthYear } from "../utils";
 
 describe("currentAgeForBirthYear", () => {
-  it("returns the age of a person based on the year of birth", () => {
-    const birthYear = 1984;
+  it("returns the correct age based on year of birth", () => {
+    const birthYear = 2000;
+    const currentYear = new Date().getFullYear();
+    const expectedAge = currentYear - birthYear;
+
     const ageOfPerson = currentAgeForBirthYear(birthYear);
-    expect(ageOfPerson).toBe(38);
+
+    expect(ageOfPerson).toBe(expectedAge);
   });
 });
